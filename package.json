@@ -1,0 +1,27 @@
+{
+  "name": "ervell-maintenance",
+  "description": "Are.na maintenance mode page",
+  "author": "Are.na",
+  "private": true,
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aredotna/ervell-maintenance"
+  },
+  "scripts": {
+    "start": "brunch watch --server",
+    "prod": "brunch build --production",
+    "sync": "s3-cli --config .s3config sync --delete-removed --acl-public public/ s3://arena-maintenance-production/",
+    "deploy": "npm run prod && npm run sync"
+  },
+  "devDependencies": {
+    "auto-reload-brunch": "^2.7.1",
+    "autoprefixer": "^7.1.4",
+    "brunch": "^2.10.10",
+    "clean-css-brunch": "^2.10.0",
+    "css-brunch": "^2.10.0",
+    "digest-brunch": "^1.6.0",
+    "postcss-brunch": "^2.1.0",
+    "s3-cli": "^0.13.0"
+  }
+}
